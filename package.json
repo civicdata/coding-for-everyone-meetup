@@ -1,0 +1,27 @@
+{
+  "name": "coding-for-everyone-meetup",
+  "version": "1.0.0",
+  "description": "Microservice to provide link to meetup API",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js",
+    "start": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcelearr/coding-for-everyone-meetup.git"
+  },
+  "author": "mcelearr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mcelearr/coding-for-everyone-meetup/issues"
+  },
+  "homepage": "https://github.com/mcelearr/coding-for-everyone-meetup#readme",
+  "dependencies": {
+    "env2": "^2.1.1",
+    "hapi": "^15.0.3",
+    "request": "^2.74.0",
+    "shot": "^3.3.1",
+    "tape": "^4.6.0"
+  }
+}
