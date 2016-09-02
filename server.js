@@ -11,7 +11,6 @@ const routes = [{
 
 server.connection({
   port: process.env.PORT || 4000,
-  host: 'localhost',
 });
 
 server.register(plugins, (err) => {
