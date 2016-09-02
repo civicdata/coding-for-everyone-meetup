@@ -1,6 +1,7 @@
 const tape = require('tape');
 const server = require('../server.js');
 const converter = require('../src/converter.js');
+const request = require('request');
 require('env2')('config.env');
 
 tape('first test', (t) => {
@@ -49,6 +50,16 @@ tape('test that injecting request to server makes correct API call', (t) => {
 
   server.inject(options, (response) => {
     t.equal(JSON.parse(response.result)[0].id, 18356664, 'response has the correct id');
+    t.end();
+  });
+});
+
+// This is an awful test because it introduces external dependencies.
+// If heroku is down, the test will fail.
+// I have included it here to show the format in which body can be accessed.
+tape('test that making request to live heroku site returns correct response', (t) => {
+  request('https://cfe-meetup-api.herokuapp.com/find/groups?id=18356664', (error, response, body) => {
+    t.equal(JSON.parse(body)[0].id, 18356664, 'response has the correct id');
     t.end();
   });
 });
