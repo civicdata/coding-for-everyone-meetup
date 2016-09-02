@@ -2,10 +2,13 @@
   "name": "coding-for-everyone-meetup",
   "version": "1.0.0",
   "description": "Microservice to provide link to meetup API",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "node test/test.js",
-    "start": "nodemon src/index.js"
+    "start": "nodemon server.js"
+  },
+  "engines": {
+    "node": "6"
   },
   "repository": {
     "type": "git",

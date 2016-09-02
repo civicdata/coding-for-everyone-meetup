@@ -1,7 +1,7 @@
 const hapi = require('hapi');
 const server = new hapi.Server();
 const plugins = [];
-const handler = require("./handler.js");
+const handler = require("src/handler.js");
 
 const routes = [{
   path: '/{param*}',
