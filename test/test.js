@@ -1,6 +1,6 @@
 const tape = require("tape");
 const shot = require("shot");
-const server = require("../src/index.js");
+const server = require("../server.js");
 const converter = require("../src/converter.js");
 require('env2')('config.env');
 
