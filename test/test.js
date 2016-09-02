@@ -1,13 +1,12 @@
-const tape = require("tape");
-const shot = require("shot");
-const server = require("../server.js");
-const converter = require("../src/converter.js");
+const tape = require('tape');
+const server = require('../server.js');
+const converter = require('../src/converter.js');
 require('env2')('config.env');
 
 tape('first test', (t) => {
   t.equal(true, true, 'true is equal to true');
   t.end();
-})
+});
 
 tape('test get request to the / endpoint', (t) => {
   const options = {
@@ -37,7 +36,8 @@ tape('test that server requests are converted to API queries in the right format
   const query = '/find/groups?id=18356664';
   const apiCall = `https://api.meetup.com/find/groups?id=18356664&key=${process.env.ACCESS_TOKEN}&sign=true`;
 
-  t.equal(converter(query), apiCall, 'converter function correctly converts the query to the meetup format');
+  t.equal(converter(query), apiCall,
+  'converter function correctly converts the query to the meetup format');
   t.end();
 });
 
@@ -51,4 +51,4 @@ tape('test that injecting request to server makes correct API call', (t) => {
     t.equal(JSON.parse(response.result)[0].id, 18356664, 'response has the correct id');
     t.end();
   });
-})
+});
